@@ -1,6 +1,6 @@
-// COLOCO AQUÍ TU NOMBRE COMPLETO
-// COLOCA AQUÍ TU ID
-// COLOCA AQUÍ TU CORREO ELECTRÓNICO
+// Sebastian Segovia Medina
+// 000371417
+// sebastian.segovia@upb.edu.co
 (START)
     @START
     0;JMP
