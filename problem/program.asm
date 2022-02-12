@@ -84,7 +84,7 @@ D;JEQ
         M=D
         @5
         MD=M-1
-        @WHITELOOP //salta a BLACKLOOP hasta que todas las direcciones tengan 0 de la RAM[16384]-RAM[24575] 
+        @WHITELOOP //salta a WHITELOOP hasta que todas las direcciones tengan 0 de la RAM[16384]-RAM[24575] 
         D;JGT
         @READKBDF
         0;JMP
