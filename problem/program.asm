@@ -13,10 +13,10 @@
     D=M
     @67 //'c'
     D=D-A //si la tecla 'C' es presionada entonces pinte de negro los pixeles
-    @
-
-
-
+    @DRAWWHITE
+    D;JEQ
+    @READKBD
+    0;JMP
 
 
 (DRAWBLACK) //pinta de negro los pixeles asignando un -1 de la RAM[16384]-RAM[24575]
