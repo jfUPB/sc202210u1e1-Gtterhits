@@ -2,16 +2,16 @@
 // 000371417
 // sebastian.segovia@upb.edu.co
 
-(READKBD)
+(READKBDF)
     @KBD //leer el teclado
     D=M
     @70 //'f' 
     D=D-A //si la tecla 'f' es presionada entonces pinte de negro los pixeles
     @DRAWBLACK
     D;JEQ
-    @READKBD
+    @READKBDF
     0;JMP
-
+   
 (DRAWBLACK) //pinta de negro los pixeles asignando un -1 de la RAM[16384]-RAM[24575]
     @0
     D=M
@@ -38,14 +38,15 @@
         @BLACKLOOP //salta a BLACKLOOP hasta que todas las direcciones tengan -1 de la RAM[16384]-RAM[24575] 
         D;JGT
 
-        @KBD //de lo contrario lea el teclado de nuevo
-        D=M
-        @67 //'c'
-        D=D-A //si la tecla 'C' es presionada entonces pinte de negro los pixeles
-        @DRAWWHITE
-        D;JEQ
-        @READKBD
-        0;JMP
+(READKBDC)
+@KBD //de lo contrario lea el teclado de nuevo
+D=M
+@67 //'c'
+D=D-A //si la tecla 'C' es presionada entonces pinte de negro los pixeles
+@DRAWWHITE
+D;JEQ
+@READKBDC
+0;JMP
 
 (DRAWWHITE) //pinta de negro los pixeles asignando un 0 de la RAM[16384]-RAM[24575]
     @1
@@ -61,7 +62,7 @@
     (WHITELOOP)
         @6
         A=M
-        M=-1 //pone -1 en la direccion de la memoria actual
+        M=0 //pone 0 en la direccion de la memoria actual
         @6
         D=M
         @1
@@ -70,9 +71,9 @@
         M=D
         @5
         MD=M-1
-        @WHITELOOP //salta a BLACKLOOP hasta que todas las direcciones tengan -1 de la RAM[16384]-RAM[24575] 
+        @WHITELOOP //salta a BLACKLOOP hasta que todas las direcciones tengan 0 de la RAM[16384]-RAM[24575] 
         D;JGT
-        @READKBD
+        @READKBDF
         0;JMP
 
 (END)
