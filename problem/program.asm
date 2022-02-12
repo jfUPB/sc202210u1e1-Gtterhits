@@ -3,7 +3,8 @@
 // sebastian.segovia@upb.edu.co
 
 
-//Condiciones iniciales
+//Cargar pixeles
+
 @8192
 D=A
 @R0
