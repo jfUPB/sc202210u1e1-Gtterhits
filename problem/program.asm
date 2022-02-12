@@ -2,22 +2,24 @@
 // 000371417
 // sebastian.segovia@upb.edu.co
 
-//Variables
-
 (READKBD)
-@KBD //leer el teclado
+    @KBD //leer el teclado
+    D=M
+    @70 //'f' 
+    D=D-A //si la tecla 'f' es presionada entonces pinte de negro los pixeles
+    @DRAWBLACK
+    D;JEQ
+    @KBD //de lo contrario lea el teclado de nuevo
+    D=M
+    @67 //'c'
+    D=D-A //si la tecla 'C' es presionada entonces pinte de negro los pixeles
+    @
 
-@70 //si la tecla "f" es presionada entonces pinte de negro los pixeles
-
-
-//pintar de negro los pixeles
 
 
 
 
-
-
-(BRAWBLACK) //pinta de negro los pixeles asignando un -1 de la RAM[16384]-RAM[24575]
+(DRAWBLACK) //pinta de negro los pixeles asignando un -1 de la RAM[16384]-RAM[24575]
     @0
     D=M
     @END //si la RAM[0]=0 entonces salte al END
