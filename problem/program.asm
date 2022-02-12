@@ -2,6 +2,18 @@
 // 000371417
 // sebastian.segovia@upb.edu.co
 
+
+//Condiciones iniciales
+@8192
+D=A
+@R0
+M=D
+
+@8192
+D=A
+@R1
+M=D
+
 (READKBDF)
     @KBD //leer el teclado
     D=M
