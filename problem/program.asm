@@ -4,7 +4,6 @@
 
 
 //Cargar pixeles
-
 @8192
 D=A
 @R0
@@ -21,7 +20,7 @@ M=D
     @70 //'f' 
     D=D-A //si la tecla 'f' es presionada entonces pinte de negro los pixeles
     @DRAWBLACK
-    D;JEQ
+    D;JEQ //si D=0 salte
     @READKBDF
     0;JMP
    
